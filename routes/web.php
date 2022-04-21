@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ProfileController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,3 +24,10 @@ Route::get('/details', function () {
     return view('post.postdetails');
 });
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// ------------- PROFILE ----------------
+Route::get('/profile',[ProfileController::class,'index'])->name('profile');
+Route::post('/saveprofile',[ProfileController::class,'create'])->name('saveprofile');

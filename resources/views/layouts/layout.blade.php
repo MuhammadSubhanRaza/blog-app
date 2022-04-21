@@ -5,6 +5,7 @@
     <title>Blog App</title>
     <link rel="stylesheet" href="{{asset("css/main.css")}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{asset("css/bootstrap.min.css")}}">
 </head>
 <body>
     
@@ -19,7 +20,6 @@
               <ul class="nav-menu">
                 <li class="menu-active"><a href="index-2.html">Home</a></li>
                 <li><a href="category.html">Category</a></li>
-                <li><a href="archive.html">Archive</a></li>
                 <li class="menu-has-children"><a href="#">Pages</a>
                   <ul>
                     <li><a href="elements.html">Elements</a></li>
@@ -31,6 +31,8 @@
                   </ul>
                 </li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="{{Route("login")}}">Login</a></li>
+                <li><a href="{{Route("register")}}">Register</a></li>
               </ul>
             </nav>
           </div>
@@ -134,7 +136,7 @@
   <script>eval(mod_pagespeed_xcBcpuGrh7);</script>
   <script src="{{asset("js/owlcasrousel.js")}}"></script>
   <script>eval(mod_pagespeed_teAbvIIDKj);</script>
-  <script>eval(mod_pagespeed_BhGfdfWE$A);</script>
+  <script>eval(mod_pagespeed_BhGfdfWE$A);</script> 
   <script>eval(mod_pagespeed_ohFJZOtKUS);</script>
   <script>eval(mod_pagespeed_8VCnk6M5KB);</script>
   <script>eval(mod_pagespeed_NU5ga6j70y);</script>
