@@ -27,7 +27,7 @@
                 </li>
                 <li class="menu-has-children"><a href="#">Blog</a>
                   <ul>
-                    <li><a href="blog-details.html">Blog Details</a></li>
+                    <li><a href="{{Route("addpost")}}">Add New Post</a></li>
                   </ul>
                 </li>
                 <li><a href="contact.html">Contact</a></li>

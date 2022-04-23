@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +16,7 @@ use App\Http\Controllers\ProfileController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[PostController::class,'index'])->name('posts');
 
 
 Route::get('/details', function () {
@@ -27,7 +26,12 @@ Route::get('/details', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/index', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 // ------------- PROFILE ----------------
 Route::get('/profile',[ProfileController::class,'index'])->name('profile');
 Route::post('/saveprofile',[ProfileController::class,'create'])->name('saveprofile');
+
+// ----------------------- POST ----------------
+
+Route::get('/addpost',[PostController::class,'addpost'])->name("addpost");
+Route::post('/createpost',[PostController::class,'create'])->name("ceratepost");
