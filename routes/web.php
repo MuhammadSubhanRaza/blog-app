@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CategroyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +36,13 @@ Route::post('/saveprofile',[ProfileController::class,'create'])->name('saveprofi
 
 Route::get('/addpost',[PostController::class,'addpost'])->name("addpost");
 Route::post('/createpost',[PostController::class,'create'])->name("ceratepost");
+
+
+// ------------------ CATEGORY -----------------
+
+
+
+Route::prefix('admin')->group(function () {
+    Route::get('/category',[CategroyController::class,'index'])->name('category');
+    Route::post('/addcategory',[CategroyController::class,'create'])->name('addcategory');
+});
