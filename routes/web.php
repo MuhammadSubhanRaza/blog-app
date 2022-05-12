@@ -39,10 +39,15 @@ Route::post('/createpost',[PostController::class,'create'])->name("ceratepost");
 
 // ------------------ CATEGORY -----------------
 
+    
 
+// Route::prefix('admin')->group(function () {
+//     // Route::get('/category',[CategroyController::class,'index'])->name('category');
+    
+// });
 
-Route::prefix('admin')->group(function () {
-    Route::get('/category',[CategroyController::class,'index'])->name('category');
+Route::middleware('can:isAdmin')->prefix('admin')->group(function () {
+    Route::get('/category',[CategroyController::class,'index'])->name('category'); 
     Route::post('/addcategory',[CategroyController::class,'create'])->name('addcategory');
 
     Route::get('/users',[PostController::class,'allPosts'])->name('allposts');

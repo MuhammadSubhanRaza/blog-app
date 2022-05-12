@@ -145,6 +145,12 @@
               </h3>
               <p>{{$post->content}}</p>
               <a href="{{Route('postDetails',$post->id)}}" class="primary-btn text-uppercase mt-15">continue Reading</a>
+              @auth
+                @if (auth()->user()->id==$post->user_id)
+                  <a href="#" class="primary-btn text-uppercase mt-15 ml-3">Edit Post</a>
+                @endif
+              @endauth
+              
               <div class="post-box">
                 <div class="d-flex">
                   <div>

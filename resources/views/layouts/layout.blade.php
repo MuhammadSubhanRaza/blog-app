@@ -31,8 +31,20 @@
                   </ul>
                 </li>
                 <li><a href="contact.html">Contact</a></li>
+                @auth
+                <li>
+                  <a style="background-color: tomato" href="#" onclick="event.preventDefault();document.getElementById('form-logout').submit()">Logout</a>
+                </li>
+                <form id="form-logout" action="/logout" method="POST">
+                  @csrf
+                </form>
+                @endauth
+                
+                @guest
                 <li><a href="{{Route("login")}}">Login</a></li>
                 <li><a href="{{Route("register")}}">Register</a></li>
+                @endguest
+                
               </ul>
             </nav>
           </div>

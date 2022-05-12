@@ -72,13 +72,17 @@
           <div class="comments-area">
             <h4>05 Comments</h4>
 
-            <div class="p-5">
-              <form action="{{Route('addComment',$post->id)}}" method="POST">
-                @csrf
-                <input type="text" name="comment" class="form-control" placeholder="Place your comment here">
-                <input type="submit" value="Post" class="btn btn-primary mt-3">
-              </form>
-            </div>
+            @auth
+              <div class="p-5">
+                <form action="{{Route('addComment',$post->id)}}" method="POST">
+                  @csrf
+                  <input type="text" name="comment" class="form-control" placeholder="Place your comment here">
+                  <input type="submit" value="Post" class="btn btn-primary mt-3">
+                </form>
+              </div>
+            @endauth
+
+            
             
             @foreach ($post->Comments as $comment)
 
