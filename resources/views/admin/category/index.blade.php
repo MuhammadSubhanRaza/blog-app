@@ -11,7 +11,7 @@
 
     <div class="container-fluid plr_30 body_white_bg pt_30">
 
-        <div class="col-md-12">
+        <div class="col-md-12 pb-5">
             <form action="{{Route('addcategory')}}" method="POST">
                 @csrf
                 <div class="row">
@@ -26,6 +26,34 @@
                     </div>
                 </div>
             </form>
+        </div>
+
+    </div>
+
+    <div class="container-fluid plr_30 body_white_bg pt_30 mt-3">
+
+        <div class="col-md-12 pb-5">
+            <table class="table table-stiped">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($categories as $category)
+                        <tr>
+                            <td>{{$category->title}}</td>
+                            <td>{{$category->description}}</td>
+                            <td>
+                                <a href="#" class="btn btn-secondary">Edit</a>
+                                <a href="#" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
 
     </div>

@@ -71,9 +71,9 @@
                 </a>
             </li>
             <li class="mm-active">
-                <a href="#">
+                <a href="{{Route('allposts')}}">
                     <img src="img/menu-icon/1.svg" alt="">
-                    <span>Users</span>
+                    <span>Posts</span>
                 </a>
             </li>
         </ul>

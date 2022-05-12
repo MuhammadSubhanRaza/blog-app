@@ -14,7 +14,15 @@
         <div class="col-md-8 offset-md-2">
             <form action="{{Route('ceratepost')}}" method="POST" enctype="multipart/form-data">
             @csrf
-                <input type="text" class="form-control" placeholder="Add Title to your post" name="title">
+
+              <select class="form-control" name="category">
+                <option value="-1">-- Select Category</option>
+                @foreach ($categories as $category)
+                  <option value="{{$category->id}}">{{$category->title}}</option>
+                @endforeach
+              </select>
+
+                <input type="text" class="form-control mt-3" placeholder="Add Title to your post" name="title">
                 <textarea name="content" placeholder="Description" class="form-control mt-3" id="" cols="30" rows="5"></textarea>
                 
                 <nav class="mt-3">

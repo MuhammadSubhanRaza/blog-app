@@ -144,7 +144,7 @@
                 <a href="blog-details.html">{{$post->title}}</a>
               </h3>
               <p>{{$post->content}}</p>
-              <a href="/details" class="primary-btn text-uppercase mt-15">continue Reading</a>
+              <a href="{{Route('postDetails',$post->id)}}" class="primary-btn text-uppercase mt-15">continue Reading</a>
               <div class="post-box">
                 <div class="d-flex">
                   <div>

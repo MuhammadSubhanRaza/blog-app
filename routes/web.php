@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CategroyController;
+use App\Http\Controllers\admin\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +21,7 @@ use App\Http\Controllers\CategroyController;
 Route::get('/',[PostController::class,'index'])->name('posts');
 
 
-Route::get('/details', function () {
-    return view('post.postdetails');
-});
+Route::get('/postdetails/{id}',[PostController::class,'postDetails'])->name('postDetails');
 
 
 Auth::routes();
@@ -45,4 +44,8 @@ Route::post('/createpost',[PostController::class,'create'])->name("ceratepost");
 Route::prefix('admin')->group(function () {
     Route::get('/category',[CategroyController::class,'index'])->name('category');
     Route::post('/addcategory',[CategroyController::class,'create'])->name('addcategory');
+
+    Route::get('/users',[PostController::class,'allPosts'])->name('allposts');
+
+    Route::post('addComment/{id}',[CommentController::class,'createComment'])->name('addComment');
 });
